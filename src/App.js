@@ -6,7 +6,6 @@ export default function App() {
   return (
     <div className="App">
       <div className="container">
-
         <h1> Weather App</h1>
         <Weather />
         <footer>
@@ -14,6 +13,7 @@ export default function App() {
           <a
             href="https://nck-portfolio-creator-developer.netlify.app/"
             target="_blank"
+            rel="noreferrer"
           >
             Nicole Choiniere-Kroeker
           </a>{" "}
@@ -21,6 +21,7 @@ export default function App() {
           <a
             href="https://github.com/nchoin/react-weather-app-final"
             target="_blank"
+            rel="noreferrer"
           >
             GitHub
           </a>{" "}
@@ -28,6 +29,7 @@ export default function App() {
           <a
             href="https://weather-app-react-shecodes-final-nck.netlify.app/"
             target="_blank"
+            rel="noreferrer"
           >
             Netlify
           </a>
