@@ -1,7 +1,7 @@
 import React , {useState} from "react";
 import axios from "axios";
 import "./Weather.css";
-export default function Weather(){
+export default function Weather(props){
     // const [ready, setReady] = useState(false);
     const [weatherData, setWeatherData]=useState({ready:false});
 // handleResponse function will use the date from the api call and display it however I decide.
@@ -64,9 +64,8 @@ export default function Weather(){
         );
     } else {
             const apiKey = "6bccfefa354f0f4do4245dc0a56fata0";
-    let city = "Cranston"
     const apiUrl =
-      `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+      `https://api.shecodes.io/weather/v1/current?query=${props.defaultCity}&key=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse)
     return "loading...Please wait..."
     }
