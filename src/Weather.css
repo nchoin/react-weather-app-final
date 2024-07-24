@@ -2,3 +2,11 @@
     background-color: lightblue;
     border: 1px solid gray;
 }
+.WeatherInfo{
+    margin: 2px 5px;
+}
+.WeatherInfoUL{
+    list-style-type: none;
+    margin: 5px 0;
+    padding:0;
+}
