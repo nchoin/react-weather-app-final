@@ -12,24 +12,27 @@ export default function Weather(props){
     const [weatherData, setWeatherData]=useState({ready:false});
 
     function handleResponse(response){
-        // console.log(response.data)
-        // console.log(response.data.temperature.current)
+        console.log(response.data)
+        console.log(response.data.coordinates)
         setWeatherData({
-          ready:true,
+          ready: true,
           city: response.data.city,
-          temperature: (response.data.temperature.current)*9/5+32,
-          date: new Date(response.data.time*1000),
+          coordinates: response.data.coordinates,
+
+          // temperature: (response.data.temperature.current * 9) / 5 + 32,
+          temperature: response.data.temperature.current,
+          date: new Date(response.data.time * 1000),
           humidity: response.data.temperature.humidity,
           wind: Math.round(response.data.wind.speed),
           conditions: response.data.condition.description,
           icon: response.data.condition.icon_url,
-          iconDescription:response.data.condition.icon,
+          iconDescription: response.data.condition.icon,
         });
     }
 
     function search(){
         const apiKey = "6bccfefa354f0f4do4245dc0a56fata0";
-        const apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+        const apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=imperial`;
         axios.get(apiUrl).then(handleResponse);
     }
 
@@ -66,7 +69,7 @@ export default function Weather(props){
               </div>
             </form>
             <WeatherInfo data={weatherData}/>
-            <WeatherForecast />
+            <WeatherForecast coordinates={weatherData.coordinates}/>
             </div>
         );
     } else {
