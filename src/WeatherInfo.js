@@ -33,7 +33,7 @@ export default function WeatherInfo(props){
             </ul>
           </div> */}
         </div>
-        {/* This is from the WeatherInfo component */}
+ 
       </div>
     );
 }

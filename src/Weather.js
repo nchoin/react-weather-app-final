@@ -18,7 +18,6 @@ export default function Weather(props){
           ready: true,
           city: response.data.city,
           coordinates: response.data.coordinates,
-
           // temperature: (response.data.temperature.current * 9) / 5 + 32,
           temperature: response.data.temperature.current,
           date: new Date(response.data.time * 1000),
